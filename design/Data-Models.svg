@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 538 478" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+    <g transform="matrix(1,0,0,1,0,-8.304)">
+        <g id="Canvas_1_Layer_1">
+            <g id="Group_15">
+                <g id="Graphic_17">
+                    <rect x="187" y="71" width="130" height="206" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,524,118)">
+                        <g transform="matrix(1,0,0,1,-331,-28)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Title</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,-6)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Subtitle</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,16)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Author(s)</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,38)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">File Location</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,60)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">File Name</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,82)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Publication Date</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,104)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Publisher</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,126)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Copyright Date</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,148)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Keywor<tspan x="42.861px 50.804px " y="0px 0px ">ds</tspan></text>
+                        </g>
+                    </g>
+                </g>
+                <g id="Graphic_16">
+                    <rect x="187" y="45" width="130" height="26" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,218.044,62)">
+                        <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">magpieObj</text>
+                    </g>
+                </g>
+            </g>
+            <g id="Group_18">
+                <g id="Graphic_20">
+                    <rect x="1" y="381" width="130" height="30" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,7,400)">
+                        <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Article Sour<tspan x="67.145px 73.411px " y="0px 0px ">ce</tspan></text>
+                    </g>
+                </g>
+                <g id="Graphic_19">
+                    <rect x="1" y="355" width="130" height="26" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,12.0435,372)">
+                        <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">magpieArticleObj</text>
+                    </g>
+                </g>
+            </g>
+            <g id="Group_21">
+                <g id="Graphic_23">
+                    <rect x="187" y="381" width="130" height="52" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,524,428)">
+                        <g transform="matrix(1,0,0,1,-331,-28)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">ISBN</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,-6)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">V<tspan x="7.228px 14.937px " y="0px 0px ">ol</tspan>ume</text>
+                        </g>
+                    </g>
+                </g>
+                <g id="Graphic_22">
+                    <rect x="187" y="355" width="130" height="26" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,202.411,372)">
+                        <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">magpieBookObj</text>
+                    </g>
+                </g>
+            </g>
+            <g id="Group_24">
+                <g id="Graphic_26">
+                    <rect x="373" y="379.347" width="164" height="65.653" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,710,426.347)">
+                        <g transform="matrix(1,0,0,1,-331,-28)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">V<tspan x="7.228px 14.937px " y="0px 0px ">ol</tspan>ume</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,-6)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">Issue</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-331,16)">
+                            <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">ISSN</text>
+                        </g>
+                    </g>
+                </g>
+                <g id="Graphic_25">
+                    <rect x="373" y="355" width="164" height="24.347" style="fill:none;stroke:rgb(185,192,193);stroke-width:2px;"/>
+                    <g transform="matrix(1,0,0,1,391.664,371.174)">
+                        <text x="0px" y="0px" style="font-family:'Avenir-Book', 'Avenir';font-size:13px;fill:rgb(81,85,86);">magpieMagazineObj</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,212.448,20)">
+                <g id="Graphic_33">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'HelveticaNeue', 'Helvetica Neue';font-size:16px;">Base Class</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,180,486)">
+                <g id="Graphic_34">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'HelveticaNeue', 'Helvetica Neue';font-size:16px;">Concr<tspan x="43.264px 51.856px " y="0px 0px ">et</tspan>e Classes</text>
+                    </g>
+                </g>
+            </g>
+            <g id="Line_35">
+                <path d="M252,278L252,316.26L66,316.26L66,354" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g id="Line_36">
+                <path d="M252,354L252,278" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g id="Line_37">
+                <path d="M455,354L455,316.335L252,316.335L252,278" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

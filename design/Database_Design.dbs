@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MagPie DBS" id="Project-1067" database="LogicalDesign" >
+	<comment><![CDATA[Logical design for the MagPie collections manager.]]></comment>
+	<schema name="INSTANCE" catalogname="MagPie DBS" >
+		<table name="Authors" prior="Entity" >
+			<comment><![CDATA[The authors entity contains information related to a particular author.]]></comment>
+			<column name="id" type="BIGINT" length="0" decimal="0" jt="-5" mandatory="y" >
+				<comment><![CDATA[Author id attribute - unique key]]></comment>
+			</column>
+			<column name="firstName" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="middleInitials" type="VARCHAR" length="16" jt="12" />
+			<column name="lastName" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<index name="pk_Authors" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="article_authors" prior="articles_authors" >
+			<column name="article_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="author_id" type="BIGINT" length="0" decimal="0" jt="-5" mandatory="y" >
+				<comment><![CDATA[Author id attribute - unique key]]></comment>
+			</column>
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="article_id" />
+				<column name="author_id" />
+			</index>
+			<fk name="fk_article_authors_articles" to_schema="MagPie DBS.INSTANCE" to_table="articles" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="article_id" pk="id" />
+			</fk>
+			<fk name="fk_article_authors_Authors" to_schema="MagPie DBS.INSTANCE" to_table="Authors" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="author_id" pk="id" />
+			</fk>
+		</table>
+		<table name="article_keywords" prior="Entity" >
+			<column name="article_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="keyword_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="article_id" />
+				<column name="keyword_id" />
+			</index>
+			<fk name="fk_article_keywords_articles" to_schema="MagPie DBS.INSTANCE" to_table="articles" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="article_id" pk="id" />
+			</fk>
+			<fk name="fk_article_keywords_keywords" to_schema="MagPie DBS.INSTANCE" to_table="keywords" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="keyword_id" pk="id" />
+			</fk>
+		</table>
+		<table name="article_publishers" prior="Entity" >
+			<column name="article_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="publisher_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="article_id" />
+				<column name="publisher_id" />
+			</index>
+			<fk name="fk_article_publishers_articles" to_schema="MagPie DBS.INSTANCE" to_table="articles" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="article_id" pk="id" />
+			</fk>
+			<fk name="fk_article_publishers_publishers" to_schema="MagPie DBS.INSTANCE" to_table="publishers" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="publisher_id" pk="id" />
+			</fk>
+		</table>
+		<table name="articles" prior="Entity" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="title" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="subtitle" type="VARCHAR" length="100" jt="12" />
+			<column name="location" type="VARCHAR" length="256" jt="12" mandatory="y" />
+			<column name="filename" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="publicationDate" type="DATE" jt="91" />
+			<column name="copyrightDate" type="DATE" jt="91" />
+			<column name="source" type="VARCHAR" length="256" jt="12" />
+			<index name="pk_articles" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="book_authors" prior="book" >
+			<column name="book_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="author_id" type="BIGINT" length="0" decimal="0" jt="-5" mandatory="y" >
+				<comment><![CDATA[Author id attribute - unique key]]></comment>
+			</column>
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="book_id" />
+				<column name="author_id" />
+			</index>
+			<fk name="fk_book_authors_books" to_schema="MagPie DBS.INSTANCE" to_table="books" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="book_id" pk="id" />
+			</fk>
+			<fk name="fk_book_authors_Authors" to_schema="MagPie DBS.INSTANCE" to_table="Authors" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="author_id" pk="id" />
+			</fk>
+		</table>
+		<table name="book_keywords" prior="Entity" >
+			<column name="book_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="keyword_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="book_id" />
+				<column name="keyword_id" />
+			</index>
+			<fk name="fk_book_keywords_books" to_schema="MagPie DBS.INSTANCE" to_table="books" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="book_id" pk="id" />
+			</fk>
+			<fk name="fk_book_keywords_keywords" to_schema="MagPie DBS.INSTANCE" to_table="keywords" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="keyword_id" pk="id" />
+			</fk>
+		</table>
+		<table name="book_publishers" prior="Entity" >
+			<column name="book_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="publisher_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="book_id" />
+				<column name="publisher_id" />
+			</index>
+			<fk name="fk_book_publishers_books" to_schema="MagPie DBS.INSTANCE" to_table="books" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="book_id" pk="id" />
+			</fk>
+			<fk name="fk_book_publishers_publishers" to_schema="MagPie DBS.INSTANCE" to_table="publishers" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="publisher_id" pk="id" />
+			</fk>
+		</table>
+		<table name="books" prior="articles_0" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="title" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="subtitle" type="VARCHAR" length="100" jt="12" />
+			<column name="location" type="VARCHAR" length="256" jt="12" mandatory="y" />
+			<column name="filename" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="publicationDate" type="DATE" jt="91" />
+			<column name="copyrightDate" type="DATE" jt="91" />
+			<column name="source" type="VARCHAR" length="256" jt="12" />
+			<column name="isbn" type="VARCHAR" length="32" jt="12" />
+			<column name="volume" type="VARCHAR" length="32" jt="12" />
+			<index name="pk_articles_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="keywords" prior="Entity" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="keyword" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<index name="pk_keywords" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="magazine_authors" prior="magazine_author" >
+			<column name="magazine_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="author_id" type="BIGINT" length="0" decimal="0" jt="-5" mandatory="y" >
+				<comment><![CDATA[Author id attribute - unique key]]></comment>
+			</column>
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="magazine_id" />
+				<column name="author_id" />
+			</index>
+			<fk name="fk_magazine_authors_magazines" to_schema="MagPie DBS.INSTANCE" to_table="magazines" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="magazine_id" pk="id" />
+			</fk>
+			<fk name="fk_magazine_authors_Authors" to_schema="MagPie DBS.INSTANCE" to_table="Authors" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="author_id" pk="id" />
+			</fk>
+		</table>
+		<table name="magazine_keywords" prior="Entity" >
+			<column name="magazine_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="keyword_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="magazine_id" />
+				<column name="keyword_id" />
+			</index>
+			<fk name="fk_magazine_keywords_magazines" to_schema="MagPie DBS.INSTANCE" to_table="magazines" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="magazine_id" pk="id" />
+			</fk>
+			<fk name="fk_magazine_keywords_keywords" to_schema="MagPie DBS.INSTANCE" to_table="keywords" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="keyword_id" pk="id" />
+			</fk>
+		</table>
+		<table name="magazine_publishers" prior="Entity" >
+			<column name="magazine_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="publisher_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk" unique="PRIMARY_KEY" >
+				<column name="magazine_id" />
+				<column name="publisher_id" />
+			</index>
+			<fk name="fk_magazine_publishers_magazines" to_schema="MagPie DBS.INSTANCE" to_table="magazines" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="magazine_id" pk="id" />
+			</fk>
+			<fk name="fk_magazine_publishers_publishers" to_schema="MagPie DBS.INSTANCE" to_table="publishers" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="publisher_id" pk="id" />
+			</fk>
+		</table>
+		<table name="magazines" prior="books_0" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="title" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="subtitle" type="VARCHAR" length="100" jt="12" />
+			<column name="location" type="VARCHAR" length="256" jt="12" mandatory="y" />
+			<column name="filename" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="publicationDate" type="DATE" jt="91" />
+			<column name="copyrightDate" type="DATE" jt="91" />
+			<column name="source" type="VARCHAR" length="256" jt="12" />
+			<column name="issn" prior="isbn" type="VARCHAR" length="32" jt="12" />
+			<column name="volume" type="VARCHAR" length="32" jt="12" />
+			<column name="issue" type="VARCHAR" length="32" jt="12" />
+			<index name="pk_articles_1" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="publishers" prior="Entity" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="publisher" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<index name="pk_publishers" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Articles Schema" id="Layout-18ef" show_relation="columns" >
+		<comment><![CDATA[Articles Schema]]></comment>
+		<entity schema="MagPie DBS.INSTANCE" name="Authors" color="3986C1" x="784" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="article_authors" color="C1D8EE" x="560" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="article_keywords" color="C1D8EE" x="304" y="336" />
+		<entity schema="MagPie DBS.INSTANCE" name="article_publishers" color="C1D8EE" x="48" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="articles" color="3986C1" x="304" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="keywords" color="3986C1" x="544" y="336" />
+		<entity schema="MagPie DBS.INSTANCE" name="publishers" color="3986C1" x="64" y="240" />
+	</layout>
+	<layout name="Book Schema" id="Layout-3af" show_relation="columns" >
+		<comment><![CDATA[Book Schema]]></comment>
+		<entity schema="MagPie DBS.INSTANCE" name="Authors" color="3986C1" x="752" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="book_authors" color="C1D8EE" x="528" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="book_keywords" color="C1D8EE" x="528" y="192" />
+		<entity schema="MagPie DBS.INSTANCE" name="book_publishers" color="C1D8EE" x="48" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="books" color="3986C1" x="288" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="keywords" color="3986C1" x="752" y="192" />
+		<entity schema="MagPie DBS.INSTANCE" name="publishers" color="3986C1" x="48" y="240" />
+	</layout>
+	<layout name="Default Layout" id="Layout-14f5" show_relation="columns" >
+		<entity schema="MagPie DBS.INSTANCE" name="Authors" color="C1D8EE" x="1072" y="288" />
+		<entity schema="MagPie DBS.INSTANCE" name="articles" color="C1D8EE" x="704" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="books" color="3986C1" x="704" y="304" />
+		<entity schema="MagPie DBS.INSTANCE" name="keywords" color="C1D8EE" x="1088" y="192" />
+		<entity schema="MagPie DBS.INSTANCE" name="magazines" color="3986C1" x="480" y="304" />
+		<entity schema="MagPie DBS.INSTANCE" name="publishers" color="C1D8EE" x="1072" y="416" />
+		<callout x="48" y="80" pointer="Round" >
+			<comment><![CDATA[This is a layout - a diagram with tools.
+- Create new entities by right-clicking the layout. 
+- Double-click entity headers to edit.
+- For a better understanding of the schema, create multiple layouts.
+- Deploy the model into the database by converting it first to the physical design.]]></comment>
+		</callout>
+	</layout>
+	<layout name="Magazine Schema" id="Layout-171e" show_relation="columns" >
+		<comment><![CDATA[Magazine Schema]]></comment>
+		<entity schema="MagPie DBS.INSTANCE" name="Authors" color="3986C1" x="752" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="keywords" color="3986C1" x="784" y="240" />
+		<entity schema="MagPie DBS.INSTANCE" name="magazine_authors" color="C1D8EE" x="528" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="magazine_keywords" color="C1D8EE" x="544" y="240" />
+		<entity schema="MagPie DBS.INSTANCE" name="magazine_publishers" color="C1D8EE" x="48" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="magazines" color="3986C1" x="288" y="48" />
+		<entity schema="MagPie DBS.INSTANCE" name="publishers" color="3986C1" x="64" y="256" />
+	</layout>
+</project>
